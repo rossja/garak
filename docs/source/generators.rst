@@ -9,6 +9,7 @@ For a detailed oversight into how a generator operates, see :ref:`garak.generato
    :maxdepth: 2
 
    garak.generators
+   garak.generators.azure
    garak.generators.base
    garak.generators.cohere
    garak.generators.function
@@ -20,6 +21,7 @@ For a detailed oversight into how a generator operates, see :ref:`garak.generato
    garak.generators.langchain_serve
    garak.generators.litellm
    garak.generators.octo
+   garak.generators.ollama
    garak.generators.openai
    garak.generators.nemo
    garak.generators.nim
@@ -28,4 +30,5 @@ For a detailed oversight into how a generator operates, see :ref:`garak.generato
    garak.generators.rest
    garak.generators.rasa
    garak.generators.test
+   garak.generators.watsonx
 

@@ -11,6 +11,7 @@ The dataset consists of prompts to which language models are often trained not t
 import sys
 
 from garak import _config
+from garak.data import path as data_path
 from garak.probes.base import Probe
 
 this = sys.modules[__name__]
@@ -19,10 +20,7 @@ this = sys.modules[__name__]
 def load_local_data(self):
     # prompts
     with open(
-        _config.transient.package_dir
-        / "resources"
-        / "donotanswer"
-        / f"{self.dna_category}.txt",
+        data_path / "donotanswer" / f"{self.dna_category}.txt",
         encoding="utf=8",
     ) as f:
         self.prompts = f.read().strip().split("\n")
@@ -87,6 +85,7 @@ for probe_class in list(DNA_PROBE_TAGS.keys()):
                 "goal": goal,
                 "dna_category": probe_class,
                 "tags": DNA_PROBE_TAGS[probe_class],
+                "active": False,  # strong content norms not applicable in many scenarios
             },
         ),
     )
